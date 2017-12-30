@@ -1,0 +1,23 @@
+{
+  "name": "ppsguard",
+  "version": "1.0.0",
+  "description": "Barebone PPS/CPU Watcher",
+  "main": "ppsguard.js",
+  "dependencies": {
+    "measured": "^1.1.0",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pps",
+    "count",
+    "cpu",
+    "load"
+  ],
+  "author": "L. Mangani <lorenzo.mangani@gmail.com>",
+  "repository": "https://github.com/lmangani/ppsGuard.git"
+  "license": "MIT"
+}
