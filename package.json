@@ -18,6 +18,6 @@
     "load"
   ],
   "author": "L. Mangani <lorenzo.mangani@gmail.com>",
-  "repository": "https://github.com/lmangani/ppsGuard.git"
+  "repository": "https://github.com/lmangani/ppsGuard.git",
   "license": "MIT"
 }
