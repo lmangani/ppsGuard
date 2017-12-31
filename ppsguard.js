@@ -16,7 +16,7 @@ var max_cpu = argv.max_cpu || 2;
 var lastR = 0;
 var getPPS = function(){
 	var RX1 = fs.readFileSync('/sys/class/net/'+interface+'/statistics/rx_packets','utf8');
-		stats_rx.mark((RX1||0)-(lastR||0));
+		if (lastR !=0) stats_rx.mark((RX1||0)-(lastR));
 		lastR = RX1 || 0;
 }
 
