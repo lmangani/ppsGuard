@@ -1,9 +1,9 @@
 # ppsGuard
-Barebone PPS/CPU Rate Watcher in NodeJS
+Barebone PPS/CPU Rate Watcher for console
 
 ### Install
 ```
-npm install ppsguard
+sudo npm install -g ppsguard
 ```
 
 ### Usage

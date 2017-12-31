@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var Measured = require('measured');
 var stats_rx = new Measured.Meter('rx');
 var stats_cpu = new Measured.Gauge(function(){ return os.loadavg(); }); 
