@@ -19,6 +19,8 @@ ppsguard --max_pps=300 --max_cpu=3
 
 ### Options
 * ``--interface``: Ethernet Interface. _(default: eth0)_
-* ``--max_pps``: PPS Treshold. _(default: 1000)_
-* ``--max_cpu``: CPU Treshold, _(default: 2)_
-* ``--message``: Warning Message _(default: "WARNING!")_
+* ``--max_pps``  : PPS Current Treshold. _(default: 500)_
+* ``--max_mean`` : PPS Mean Treshold. _(default: 1000)_
+* ``--max_cpu``  : CPU Treshold, _(default: 2)_
+* ``--message``  : Warning Message _(default: "WARNING!")_
+* ``--json``     : Output raw JSON  _(default: false)_
