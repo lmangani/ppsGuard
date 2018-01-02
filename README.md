@@ -1,5 +1,5 @@
 # ppsGuard
-Barebone PPS/CPU Rate Watcher for console
+Barebone PPS/CPU Rate Watcher for console and UDP loggers. Useful for measuring bottlenecking events into [paStash](https://github.com/sipcapture/pastash) or other tools.
 
 ### Install
 ```
@@ -24,3 +24,4 @@ ppsguard --max_pps=300 --max_cpu=3
 * ``--max_cpu``  : CPU Treshold, _(default: 2)_
 * ``--message``  : Warning Message _(default: "WARNING!")_
 * ``--json``     : Output raw JSON  _(default: false)_
+* ``--udp``      : Output to UDP socket, Example: 127.0.0.1:1234 _(default: false)_

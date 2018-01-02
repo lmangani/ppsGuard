@@ -1,6 +1,6 @@
 {
   "name": "ppsguard",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Barebone PPS/CPU Watcher",
   "main": "ppsguard.js",
   "bin": {
@@ -18,7 +18,8 @@
     "pps",
     "count",
     "cpu",
-    "load"
+    "load",
+    "udp"
   ],
   "author": "L. Mangani <lorenzo.mangani@gmail.com>",
   "repository": "https://github.com/lmangani/ppsGuard.git",
