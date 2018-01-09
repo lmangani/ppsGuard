@@ -7,6 +7,7 @@ var stats_cpu = new Measured.Gauge(function () { return os.loadavg() })
 
 var os = require('os'), fs = require('fs')
 
+
 var argv = require('minimist')(process.argv.slice(2))
 var rxinterface = argv.interface || 'eth0'
 
@@ -16,6 +17,13 @@ var max_mean = argv.max_mean || 1000
 var max_cpu = argv.max_cpu || 2
 var json = argv.json || false
 var udp = argv.udp || false
+var limit_amount = argv.limit_amount || 1
+var limit_every = argv.limit_every || "second"
+
+var RateLimiter = require('limiter').RateLimiter;
+// 'second', 'minute', 'day', or a number of milliseconds
+var limiter = new RateLimiter(limit_amount,limit_every);
+
 
 if(udp) {
   var HOST = udp.split(':')[0];
@@ -48,12 +56,15 @@ setInterval(function () {
     cpu: cpu[0]
   }
   if (cpu > max_cpu || pps.mean > max_mean || pps.currentRate > max_pps) {
+   // rate limiter
+   limiter.removeTokens(1, function() {
     if (udp) { sendUDP(JSON.stringify(res)); return; }
     else if (json) {
 	console.log(res);
     } else {
 	console.log(new Date(), JSON.stringify(res))
     }
+   });
   }
 }, argv.interval || 1000)
 
