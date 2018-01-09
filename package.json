@@ -1,6 +1,6 @@
 {
   "name": "ppsguard",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Barebone PPS/CPU Watcher",
   "main": "ppsguard.js",
   "bin": {

@@ -39,6 +39,7 @@ var getPPS = function () {
 }
 
 var sendUDP = function (message) {
+  if (argv.debug) console.log('Sending Message',message,HOST,PORT);
   client.send(message, 0, message.length, PORT, HOST, function(err, bytes) {
     if (err) { throw err; client.close(); }
   });
@@ -55,8 +56,10 @@ setInterval(function () {
     mean: pps.mean,
     cpu: cpu[0]
   }
-  if (cpu > max_cpu || pps.mean > max_mean || pps.currentRate > max_pps) {
+  if (argv.debug) console.log('Dump:',res.cpu > max_cpu,res.pps > max_pps,res.mean > max_mean);
+  if (res.cpu >= max_cpu || res.mean >= max_mean || res.pps >= max_pps) {
    // rate limiter
+   if (argv.debug) console.log('Emit:',res);
    limiter.removeTokens(1, function() {
     if (udp) { sendUDP(JSON.stringify(res)); return; }
     else if (json) {
